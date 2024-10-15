@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Hitam sebagai warna latar belakang */
+    color: white; /* Warna teks putih */
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #009dff; /* Biru sebagai warna border */
+    border-radius: 10px;
+    background-color: #1a1a1a; /* Biru gelap sebagai warna kotak form */
+}
+
+h2 {
+    text-align: center;
+    color: #00fff7; /* Warna teks biru untuk judul */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00a6ff; /* Biru untuk label */
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #00d0ff;
+    background-color: #2e2e2e; /* Hitam untuk input background */
+    color: white; /* Teks putih */
+}
+
+.form-group input[type="submit"] {
+    width: auto;
+    background-color: #0004ff; /* Biru untuk tombol */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #0d00ff; /* Biru gelap saat hover */
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Hitam sebagai warna latar belakang */
+    color: white; /* Warna teks putih */
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #001aff; /* Biru untuk tombol */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00c3ff; /* Biru gelap saat hover */
+}
+

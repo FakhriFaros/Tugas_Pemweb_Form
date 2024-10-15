@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Pendaftaran</h2>
+    <form action="success.html" method="post"> <!-- Mengarahkan ke success.html -->
+        <!-- Nama -->
+        <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+
+        <!-- NIM -->
+        <div class="form-group">
+            <label for="nim">NIM (Minimal 9 angka):</label>
+            <input type="text" id="nim" name="nim" minlength="9" maxlength="9" required pattern="\d{9}" title="NIM harus 9 angka">
+        </div>
+
+        <!-- Fakultas -->
+        <div class="form-group">
+            <label for="fakultas">Fakultas:</label>
+            <select id="fakultas" name="fakultas" required onchange="populateJurusan()">
+                <option value="">Pilih Fakultas</option>
+                <option value="FTEN">FTEN</option>
+                <option value="FTIK">FTIK</option>
+                <option value="FKET">FKET</option>
+                <option value="FTBE">FTBE</option>
+            </select>
+        </div>
+
+        <!-- Jurusan -->
+        <div class="form-group">
+            <label for="jurusan">Jurusan:</label>
+            <select id="jurusan" name="jurusan" required>
+                <option value="">Pilih Jurusan</option>
+            </select>
+        </div>
+
+        <!-- Kelas -->
+        <div class="form-group">
+            <label for="kelas">Kelas:</label>
+            <select id="kelas" name="kelas" required>
+                <option value="">Pilih Kelas</option>
+                <script>
+                    for (let i = 65; i <= 70; i++) {
+                        document.write('<option value="' + String.fromCharCode(i) + '">' + String.fromCharCode(i) + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+
+        <!-- Asal -->
+        <div class="form-group">
+            <label for="asal">Asal:</label>
+            <textarea id="asal" name="asal" rows="4" required></textarea>
+        </div>
+
+        <!-- Tempat Tanggal Lahir -->
+        <div class="form-group">
+            <label for="ttl">Tempat Tanggal Lahir:</label>
+            <input type="text" id="ttl" name="ttl" required>
+        </div>
+
+        <!-- Nomor Telepon -->
+        <div class="form-group">
+            <label for="telepon">Nomor Telepon (Minimal 11 angka):</label>
+            <input type="tel" id="telepon" name="telepon" minlength="11" maxlength="13" required pattern="\d{11,13}" title="Nomor telepon harus 11-13 angka">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Makanan Kesukaan -->
+        <div class="form-group">
+            <label for="makanan">Makanan Kesukaan:</label>
+            <input type="text" id="makanan" name="makanan" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <input type="submit" value="Daftar">
+        </div>
+    </form>
+</div>
+
+<script>
+    function populateJurusan() {
+        var fakultas = document.getElementById("fakultas").value;
+        var jurusan = document.getElementById("jurusan");
+        jurusan.innerHTML = ''; // Hapus pilihan sebelumnya
+        
+        var jurusanOptions = {
+            'FTEN': ['S1 Teknik Informatika', 'S1 Sistem Informasi'],
+            'FTIK': ['S1 Teknik Sipil', 'S1 Teknik Lingkungan', 'S1 Geografi'],
+            'FKET': ['S1 Teknik Elektro', 'S1 Teknik Tenaga Listrik', 'S1 Teknik Sistem Energi', 'D3 Teknologi Listrik'],
+            'FTBE': ['S1 Teknik Mesin', 'D3 Teknik Mesin', 'S1 Teknik Industri', 'S1 Bisnis Energi']
+        };
+
+        if (fakultas in jurusanOptions) {
+            jurusanOptions[fakultas].forEach(function(jurusanName) {
+                var option = document.createElement('option');
+                option.value = jurusanName;
+                option.text = jurusanName;
+                jurusan.appendChild(option);
+            });
+        }
+    }
+</script>
+
+</body>
+</html>
